@@ -9,6 +9,7 @@
 	<properties>
 		<spring.version>4.2.2.RELEASE</spring.version>
 		<com.sun.jersey.version>1.19</com.sun.jersey.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<!--junit -->
