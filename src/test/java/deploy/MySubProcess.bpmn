@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="myProcess" name="My process" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <userTask id="first" name="first" activiti:candidateUsers="${users}"></userTask>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="first"></sequenceFlow>
+    <userTask id="second" name="second" activiti:candidateGroups="${teams}"></userTask>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow4" sourceRef="second" targetRef="endevent1"></sequenceFlow>
+    <subProcess id="subprocess1" name="Sub Process">
+      <userTask id="subfirst" name="subfirst" activiti:candidateUsers="${users}"></userTask>
+      <userTask id="subsecond" name="subsecond" activiti:candidateGroups="${teams}"></userTask>
+      <sequenceFlow id="flow6" sourceRef="subfirst" targetRef="subsecond"></sequenceFlow>
+      <startEvent id="startevent2" name="subStart"></startEvent>
+      <sequenceFlow id="flow9" sourceRef="startevent2" targetRef="subfirst"></sequenceFlow>
+      <endEvent id="endevent2" name="subEnd"></endEvent>
+      <sequenceFlow id="flow10" sourceRef="subsecond" targetRef="endevent2"></sequenceFlow>
+    </subProcess>
+    <sequenceFlow id="flow7" sourceRef="first" targetRef="subprocess1"></sequenceFlow>
+    <sequenceFlow id="flow8" sourceRef="subprocess1" targetRef="second"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_myProcess">
+    <bpmndi:BPMNPlane bpmnElement="myProcess" id="BPMNPlane_myProcess">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="40.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="first" id="BPMNShape_first">
+        <omgdc:Bounds height="55.0" width="105.0" x="120.0" y="210.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="second" id="BPMNShape_second">
+        <omgdc:Bounds height="55.0" width="105.0" x="685.0" y="210.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="820.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="subprocess1" id="BPMNShape_subprocess1">
+        <omgdc:Bounds height="161.0" width="395.0" x="256.0" y="157.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="subfirst" id="BPMNShape_subfirst">
+        <omgdc:Bounds height="55.0" width="105.0" x="340.0" y="210.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="subsecond" id="BPMNShape_subsecond">
+        <omgdc:Bounds height="55.0" width="105.0" x="470.0" y="210.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="startevent2" id="BPMNShape_startevent2">
+        <omgdc:Bounds height="35.0" width="35.0" x="270.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent2" id="BPMNShape_endevent2">
+        <omgdc:Bounds height="35.0" width="35.0" x="600.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="75.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="120.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="790.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="820.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="445.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="470.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="305.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="340.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="575.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="600.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="225.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="256.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="651.0" y="237.0"></omgdi:waypoint>
+        <omgdi:waypoint x="685.0" y="237.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	
+	<context:property-placeholder location="classpath:db.properties" />
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">   
+	    <!-- 基本属性 url、user、password -->  
+	    <property name="driverClassName" value="${driverClass}" />  
+	    <property name="url" value="${jdbcUrl}" />  
+	    <property name="username" value="${user}" />  
+	    <property name="password" value="${password}" />  
+	    <!-- 配置初始化大小、最小、最大 -->  
+	    <property name="initialSize" value="${initialPoolSize}" />  
+	    <property name="minIdle" value="${minPoolSize}" />   
+	    <property name="maxActive" value="${maxPoolSize}" />  
+	    <!-- 配置获取连接等待超时的时间 -->  
+	    <property name="maxWait" value="60000" />  
+	    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->  
+	    <property name="timeBetweenEvictionRunsMillis" value="60000" />  
+	    <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->  
+	    <property name="minEvictableIdleTimeMillis" value="300000" />  
+	    <property name="validationQuery" value="SELECT 'x'" />  
+	    <property name="testWhileIdle" value="true" />  
+	    <property name="testOnBorrow" value="false" />  
+	    <property name="testOnReturn" value="false" />  
+	    <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->  
+	    <property name="poolPreparedStatements" value="true" />  
+	    <property name="maxOpenPreparedStatements" value="20" />  
+	    <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+	</bean>  
+	
+	<!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
+    <context:component-scan base-package="com.chinamobile.flow.service,com.chinamobile.flow.controller">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+	<!-- 由spring管理mybatis的事务-->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- baseJdbcDao -->
+	<bean id="baseJdbcDao" class="com.chinamobile.flow.dao.impl.BaseJdbcDaoImpl">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>	
+</beans>
+ 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InterBOSS>  
+ <Version>0100</Version> 
+ <TestFlag>0</TestFlag>  
+<BIPType>   
+ <BIPCode>BIP2C060</BIPCode>   
+ <ActivityCode>T2002060</ActivityCode>  
+  <ActionCode>1</ActionCode> 
+ </BIPType>  
+<RoutingInfo> 
+ <OrigDomain>NTBK</OrigDomain>   
+ <RouteType>00</RouteType>   
+ <Routing>     
+  <HomeDomain>CSVC</HomeDomain>  
+  <RouteValue>998</RouteValue>  
+ </Routing>  
+</RoutingInfo>  
+<TransInfo>  
+  <SessionID>2016012617041129</SessionID>    
+<TransIDO>2016012617041170</TransIDO> 
+   <TransIDOTime>20160126170411</TransIDOTime> 
+   <TransIDH>201601261705220072364</TransIDH> 
+   <TransIDHTime>20160126170522</TransIDHTime> 
+ </TransInfo>  
+<SNReserve>   
+ <TransIDC>9980770120160126170801702008275</TransIDC>  
+  <ConvID>a29480e1-95cf-4fda-99c6-b0e91fe11b88</ConvID> 
+   <CutOffDay>20160126</CutOffDay>  
+  <OSNTime>20160126170522</OSNTime>  
+  <OSNDUNS>2000</OSNDUNS>   
+ <HSNDUNS>9980</HSNDUNS>   
+ <MsgSender>2003</MsgSender>  
+  <MsgReceiver>2002</MsgReceiver>   
+ <Priority>7</Priority>   
+ <ServiceLevel>0</ServiceLevel> 
+ </SNReserve> 
+ <Response>  
+  <RspType>0</RspType> 
+   <RspCode>0000</RspCode> 
+   <RspDesc>SUCCESS</RspDesc> 
+ </Response>
+</InterBOSS>

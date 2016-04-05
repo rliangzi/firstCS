@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InterBOSS>  
+ <Version>0100</Version>  
+ <TestFlag>0</TestFlag> 
+ <BIPType>   
+  <BIPCode>BIP2C064</BIPCode>    
+  <ActivityCode>T2002064</ActivityCode>  
+  <ActionCode>1</ActionCode> 
+ </BIPType>
+ <RoutingInfo>   
+  <OrigDomain>NTBK</OrigDomain>   
+  <RouteType>00</RouteType>   
+  <Routing>   
+    <HomeDomain>CSVC</HomeDomain>      
+    <RouteValue>998</RouteValue>  
+  </Routing>  
+ </RoutingInfo> 
+ <TransInfo>  
+   <SessionID>2016012617041729</SessionID> 
+   <TransIDO>2016012617041763</TransIDO> 
+   <TransIDOTime>20160126170417</TransIDOTime>   
+   <TransIDH>201601261705260072365</TransIDH>  
+   <TransIDHTime>20160126170526</TransIDHTime>
+ </TransInfo>
+ <SNReserve> 
+   <TransIDC>9980770120160126170807772008277</TransIDC>   
+   <ConvID>5faf8e95-7d46-4584-8fff-bf16b56c87b9</ConvID> 
+   <CutOffDay>20160126</CutOffDay>   
+   <OSNTime>20160126170526</OSNTime>   
+   <OSNDUNS>2000</OSNDUNS> 
+   <HSNDUNS>9980</HSNDUNS>   
+   <MsgSender>2003</MsgSender>   
+   <MsgReceiver>2002</MsgReceiver>  
+   <Priority>7</Priority>   
+   <ServiceLevel>0</ServiceLevel>
+ </SNReserve> 
+ <Response>  
+   <RspType>0</RspType>   
+   <RspCode>0000</RspCode>  
+   <RspDesc>SUCCESS</RspDesc> 
+ </Response>
+ <SvcCont>
+   <![CDATA[
+   <?xml version="1.0" encoding="UTF-8"?>
+   <SvcRoot> 
+     <Item>    <Name>Status</Name>    <Value>2</Value>  </Item> 
+     <Item>    <Name>IndictSeq</Name>    <Value>20160126CSVC00480000205</Value>  </Item> 
+     <Item>    <Name>HandlingDept</Name>    <Value>默认处理部门</Value>  </Item> 
+     <Item>    <Name>LogList</Name>    <Value>201601261703470069032|BIP2C055|20160126CSVC00480000205|0048|998|0000|SUCCESS|2016-01-26 17:03:51||201601261703510069035|BIP2C056|20160126CSVC00480000205|000|230|0000|SUCCESS|2016-01-26 17:04:06||201601261705030072336|BIP2C060|20160126CSVC00480000205|0048|998|null|null|2016-01-26 17:05:03||201601261705080072347|BIP2C060|20160126CSVC00480000205|000|230|0000|SUCCESS|2016-01-26 17:05:19</Value>  </Item> 
+     <Item>    <Name>StaffContactPhone</Name>    <Value></Value>  </Item> 
+     <Item>    <Name>HandlingStaff</Name>    <Value>默认处理人</Value>  </Item>  
+     <Item>    <Name>CurrentNode</Name>    <Value>派单</Value>  </Item>
+   </SvcRoot>
+   ]]>
+ </SvcCont>
+</InterBOSS>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InterBOSS>
+  <Version>0100</Version>
+  <TestFlag>0</TestFlag>
+  <BIPType>
+    <BIPCode>BIP2C057</BIPCode>
+    <ActivityCode>T2002056</ActivityCode>
+    <ActionCode>1</ActionCode>
+  </BIPType>
+  <RoutingInfo>
+    <OrigDomain>CSVC</OrigDomain>
+    <RouteType>00</RouteType>
+    <Routing>
+      <HomeDomain>NTBK</HomeDomain>
+      <RouteValue>998</RouteValue>
+    </Routing>
+  </RoutingInfo>
+  <TransInfo>
+    <SessionID>2016012617142419</SessionID>
+    <TransIDO>2016012617142481</TransIDO>
+    <TransIDOTime>20160126171424</TransIDOTime>
+    <TransIDH>201601261714210000109</TransIDH>
+  </TransInfo>
+  <SNReserve>
+    <TransIDC>9980770120160126171748810008305</TransIDC>
+    <ConvID>8ff44361-dd24-413c-ab42-01c6175e575c</ConvID>
+    <CutOffDay>20160126</CutOffDay>
+    <OSNTime>20160126171421</OSNTime>
+    <OSNDUNS>0000</OSNDUNS>
+    <HSNDUNS>9980</HSNDUNS>
+    <MsgSender>0057</MsgSender>
+    <MsgReceiver>0048</MsgReceiver>
+    <Priority>7</Priority>
+    <ServiceLevel>0</ServiceLevel>
+  </SNReserve>
+  <Response>
+    <RspType>0</RspType>
+    <RspCode>0000</RspCode>
+    <RspDesc>SUCCESS</RspDesc>
+  </Response>
+<SvcCont><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<SvcRoot></SvcRoot>]]>
+</SvcCont>
+</InterBOSS>

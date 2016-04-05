@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	xmlns:xenc="http://www.w3.org/2001/04/xmlenc#">
+	<soapenv:Header>
+		<h:InterBOSS xmlns:h="http://cmcc.trans">
+			<h:Version>0100</h:Version>
+			<h:TestFlag>1</h:TestFlag>
+			<h:RoutingInfo>
+				<h:OrigDomain>NTBK</h:OrigDomain>
+				<h:RouteType>00</h:RouteType>
+				<h:Routing>
+					<h:HomeDomain>BASS</h:HomeDomain>
+					<h:RouteValue>998</h:RouteValue>
+				</h:Routing>
+			</h:RoutingInfo>
+			<h:TransInfo>
+				<h:SessionID>201602291525403134775387</h:SessionID>
+				<h:TransIDO>201602291525403134775388</h:TransIDO>
+				<h:TransIDOTime>20160229152540</h:TransIDOTime>
+			</h:TransInfo>
+			<h:SNReserve>
+				<h:TransIDC>9980114320160229152540355276110</h:TransIDC>
+				<h:ConvID>7712b8c7-0085-481a-b0b8-f2e23eefc8e0</h:ConvID>
+				<h:CutOffDay>20160229</h:CutOffDay>
+				<h:OSNTime>20160229152540</h:OSNTime>
+				<h:OSNDUNS>9980</h:OSNDUNS>
+				<h:HSNDUNS>9980</h:HSNDUNS>
+				<h:MsgSender>0048</h:MsgSender>
+				<h:MsgReceiver>0266</h:MsgReceiver>
+			</h:SNReserve>
+			<h:Response>
+				<h:RspType>2</h:RspType>
+				<h:RspCode>2998</h:RspCode>
+				<h:RspDesc>客户信息正常</h:RspDesc>
+			</h:Response>
+		</h:InterBOSS>
+		<wsse:Security>
+			<xenc:ReferenceList>
+				<xenc:DataReference URI="#olSelMsisdnResponse" />
+			</xenc:ReferenceList>
+		</wsse:Security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<h:olSelMsisdnResponse xmlns:h="http://cmcc.trans">
+			<h:return>
+				<h:ReturnFlag>0</h:ReturnFlag>
+				<h:CustProperty>{"msisdn":"18754489777","cityCode":"12006","entDt":"20101229","custBrandName":"神州行","custFamilyName":"李","address":"山东省诸城市皇华镇焦家庄子村２１６号","birthDt":"19000101","subsStatType":"1010","unusualFlag":"","stuFlag":"","usimFlag":"1","custLevelName":"普通","orgName":"诸城市工商行政管理局吕标工商所","curValidCredits":"363","termEqpmtId":"7000000000004925","termUsedMons":"14","basicFeeName":"新版神州行标准卡","uniDataFeeCnt":"","uniDataFeeAmt":"","lastBillPeriod":"201601","lastBillCost":"0.00","meanTotalCost":"90.81","mean4gCost":"90.81","meanDataAmt":"3592"}
+				</h:CustProperty>
+			</h:return>
+		</h:olSelMsisdnResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
